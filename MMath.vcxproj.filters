@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{539c58e4-e3ac-4959-b433-0c1cb071a507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CPPs">
+      <UniqueIdentifier>{28a32cb0-1602-455b-b3c7-24a8d5b51569}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MCollision.cpp">
+      <Filter>CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MMath.cpp">
+      <Filter>CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MMatrix.cpp">
+      <Filter>CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MPhysics.cpp">
+      <Filter>CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MPlane.cpp">
+      <Filter>CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MQuaternion.cpp">
+      <Filter>CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MRaycast.cpp">
+      <Filter>CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MVector.cpp">
+      <Filter>CPPs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\MCollision.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MMath.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MMatrix.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MPhysics.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MPlane.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MQuaternion.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MRaycast.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MVector.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
