@@ -1,0 +1,18 @@
+#include <iostream>
+class MMatrix
+{
+	public:
+		MMatrix(int x, int y);
+		~MMatrix();
+		void inputValue(int x, int y, float val);
+		friend std::ostream& operator<< (std::ostream& os, const MMatrix mat);
+		MMatrix operator+ (MMatrix operand);
+		MMatrix operator- (MMatrix operand);
+		MMatrix operator* (float operand);
+		int getsizeX() const;
+		int getsizeY() const;
+		float MMatrix::getValue(int x, int y) const;
+	private:
+		float ** matrixData;
+		int sizeX, sizeY;
+};

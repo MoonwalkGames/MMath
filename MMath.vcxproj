@@ -125,7 +125,6 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\MCollision.cpp" />
-    <ClCompile Include="src\MMath.cpp" />
     <ClCompile Include="src\MMatrix.cpp" />
     <ClCompile Include="src\MPhysics.cpp" />
     <ClCompile Include="src\MPlane.cpp" />
