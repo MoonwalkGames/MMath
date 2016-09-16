@@ -15,9 +15,6 @@
     <ClCompile Include="src\MCollision.cpp">
       <Filter>CPPs</Filter>
     </ClCompile>
-    <ClCompile Include="src\MMath.cpp">
-      <Filter>CPPs</Filter>
-    </ClCompile>
     <ClCompile Include="src\MMatrix.cpp">
       <Filter>CPPs</Filter>
     </ClCompile>
