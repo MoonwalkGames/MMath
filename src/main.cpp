@@ -24,7 +24,8 @@ void main()
 	matrix3.inputValue(1, 0, -4);
 	matrix3.inputValue(0, 1, 7);
 
-	std::cout << matrix - matrix2 + matrix3;
+	std::cout << matrix * 2 << std::endl << std::endl;
+	std::cout << 2 * matrix;
 	
 	system("pause");
 }

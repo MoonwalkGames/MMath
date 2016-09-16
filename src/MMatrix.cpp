@@ -93,6 +93,29 @@ MMatrix MMatrix::operator-(MMatrix operand)
 
 }
 
+MMatrix MMatrix::operator*(float operand)
+{
+	for (int i = 0; i < sizeX; i++)
+	{
+		for (int j = 0; j < sizeY; j++)
+		{
+			inputValue(i, j, getValue(i, j) * operand);
+		}
+	}
+	return *this;
+}
+
+MMatrix operator* (float operandF, MMatrix operand)
+{
+	for (int i = 0; i < operand.getsizeX(); i++)
+	{
+		for (int j = 0; j < operand.getsizeY(); j++)
+		{
+			operand.inputValue(i, j, operand.getValue(i, j) * operandF);
+		}
+	}
+	return operand;
+}
 int MMatrix::getsizeX() const
 {
 	return sizeX;
