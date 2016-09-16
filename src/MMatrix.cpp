@@ -1,20 +1,20 @@
 #include "MMatrix.h"
 // Y before X, to avoid flipping variable names everywhere else and preventing crashes and general confusion. What we want, (X,Y) is the opposite
 //of how C++ stores stuff.
-MMatrix::MMatrix(int y, int x)
+MMatrix::MMatrix(int x, int y)
 {
-	sizeX = y;
-	sizeY = x;
-	matrixData = new float* [y];
+	sizeX = x;
+	sizeY = y;
+	matrixData = new float*[x];
 
-	for (int i = 0; i < y; i++)
+	for (int i = 0; i < x; i++)
 	{
-		matrixData[i] = new float [x];
+		matrixData[i] = new float[y];
 	}
 
-	for (int i = 0; i < y; i++)
+	for (int i = 0; i < x; i++)
 	{
-		for (int j = 0; j < x; j++)
+		for (int j = 0; j < y; j++)
 		{
 			matrixData[i][j] = 0.0f;
 		}
@@ -25,11 +25,13 @@ MMatrix::~MMatrix()
 {
 	//sadlkfjlkasdfkjlsalsfdajjkkjsdfjkdla
 }
+
 //Needs try/catch
 void MMatrix::inputValue(int x, int y, float val)
 {
 	this->matrixData[x][y] = val;
 }
+
 //Needs try/catch
 float MMatrix::getValue(int x, int y) const
 {
@@ -43,7 +45,7 @@ MMatrix MMatrix::operator+(MMatrix operand)
 	{
 		if ((this->getsizeX() == operand.getsizeX()) && (this->getsizeY() == operand.getsizeY()))
 		{
-			for (int i = 0; i <	sizeX; i++)
+			for (int i = 0; i < sizeX; i++)
 			{
 				for (int j = 0; j < sizeY; j++)
 				{
@@ -57,12 +59,12 @@ MMatrix MMatrix::operator+(MMatrix operand)
 			throw(0);
 		}
 	}
-	catch(...)
+	catch (...)
 	{
 		std::cout << "Aborting! Added matrices are not the same dimensions!!!" << std::endl;
 		abort();
 	}
-	
+
 }
 
 MMatrix MMatrix::operator-(MMatrix operand)
@@ -107,6 +109,7 @@ MMatrix MMatrix::operator*(float operand)
 
 MMatrix operator* (float operandF, MMatrix operand)
 {
+
 	for (int i = 0; i < operand.getsizeX(); i++)
 	{
 		for (int j = 0; j < operand.getsizeY(); j++)
@@ -116,6 +119,42 @@ MMatrix operator* (float operandF, MMatrix operand)
 	}
 	return operand;
 }
+
+MMatrix operator* (MMatrix operandF, MMatrix operand)
+{
+	try
+	{
+		if (operandF.getsizeY() == operand.getsizeX())
+		{
+			MMatrix result(operandF.getsizeX(), operand.getsizeY());
+
+			for (int i = 0; i < result.getsizeX(); i++)
+			{
+				for (int j = 0; j < result.getsizeY(); j++)
+				{
+					for (int k = 0; k < operandF.getsizeY(); k++)
+					{
+						float newValue = result.getValue(i,j);
+						newValue += (operandF.getValue(i, k) * operand.getValue(k, j));
+
+						result.inputValue(i,j, newValue);
+					}
+				}
+			}
+			return result;
+		}
+		else
+		{
+			throw(0);
+		}
+	}
+	catch (...)
+	{
+		std::cout << "Aborting! first oprand's Y do not match second oprand's X!!!" << std::endl;
+		abort();
+	}
+}
+
 int MMatrix::getsizeX() const
 {
 	return sizeX;
@@ -125,6 +164,8 @@ int MMatrix::getsizeY() const
 {
 	return sizeY;
 }
+
+//CHANGE TO THE COMPUTER WAY
 std::ostream& operator<< (std::ostream& os, const MMatrix mat)
 {
 

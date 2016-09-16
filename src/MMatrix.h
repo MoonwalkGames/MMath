@@ -9,10 +9,14 @@ class MMatrix
 		MMatrix operator+ (MMatrix operand);
 		MMatrix operator- (MMatrix operand);
 		MMatrix operator* (float operand);
+		friend MMatrix operator* (MMatrix operandF, MMatrix operand);
 		friend MMatrix operator* (float operandF, MMatrix operand);
 		int getsizeX() const;
 		int getsizeY() const;
 		float MMatrix::getValue(int x, int y) const;
+		
+
+
 	private:
 		float ** matrixData;
 		int sizeX, sizeY;
