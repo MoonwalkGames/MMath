@@ -30,7 +30,7 @@ void main()
 	//std::cout << 2 * matrix;
 	//std::cout << matrix * matrix2;
 	
-	MMatrix a(2, 3);
+	/*MMatrix a(2, 3);
 	MMatrix b(3, 4);
 
 	a.inputValue(0, 0, 1);
@@ -47,6 +47,21 @@ void main()
 	b.inputValue(0, 2, 2);
 	b.inputValue(1, 2, 1);
 	std::cout << a * b;
+	*/
+	MMatrix a(3, 1);
+	MMatrix b(1, 3);
 
+	a.inputValue(0, 0, 1);
+	a.inputValue(1, 0, 2);
+	a.inputValue(2, 0, 3);
+
+	b.inputValue(0, 0, 1);
+	b.inputValue(0, 1, 2);
+	b.inputValue(0, 2, 3);
+
+	std::cout << a;
+	std::cout << b;
+	
+	std::cout << b * a;
 	system("pause");
 }

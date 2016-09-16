@@ -4,7 +4,7 @@ class MMatrix
 	public:
 		MMatrix(int x, int y);
 		~MMatrix();
-		void inputValue(int x, int y, float val);
+		void inputValue(int column, int row, float val);
 		friend std::ostream& operator<< (std::ostream& os, const MMatrix mat);
 		MMatrix operator+ (MMatrix operand);
 		MMatrix operator- (MMatrix operand);

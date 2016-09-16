@@ -1,20 +1,20 @@
 #include "MMatrix.h"
 // Y before X, to avoid flipping variable names everywhere else and preventing crashes and general confusion. What we want, (X,Y) is the opposite
 //of how C++ stores stuff.
-MMatrix::MMatrix(int x, int y)
+MMatrix::MMatrix(int c, int r)
 {
-	sizeX = x;
-	sizeY = y;
-	matrixData = new float*[x];
+	sizeX = c;
+	sizeY = r;
+	matrixData = new float*[c];
 
-	for (int i = 0; i < x; i++)
+	for (int i = 0; i < c; i++)
 	{
-		matrixData[i] = new float[y];
+		matrixData[i] = new float[r];
 	}
 
-	for (int i = 0; i < x; i++)
+	for (int i = 0; i < c; i++)
 	{
-		for (int j = 0; j < y; j++)
+		for (int j = 0; j < r; j++)
 		{
 			matrixData[i][j] = 0.0f;
 		}
@@ -27,15 +27,15 @@ MMatrix::~MMatrix()
 }
 
 //Needs try/catch
-void MMatrix::inputValue(int x, int y, float val)
+void MMatrix::inputValue(int c, int r, float val)
 {
-	this->matrixData[x][y] = val;
+	this->matrixData[c][r] = val;
 }
 
 //Needs try/catch
-float MMatrix::getValue(int x, int y) const
+float MMatrix::getValue(int c, int r) const
 {
-	return this->matrixData[x][y];
+	return this->matrixData[c][r];
 }
 
 
@@ -120,7 +120,7 @@ MMatrix operator* (float operandF, MMatrix operand)
 	return operand;
 }
 
-MMatrix operator* (MMatrix operandF, MMatrix operand)
+MMatrix operator* (MMatrix operand, MMatrix operandF)
 {
 	try
 	{
@@ -177,6 +177,7 @@ std::ostream& operator<< (std::ostream& os, const MMatrix mat)
 			os << "[" << mat.getValue(j, i) << "]";
 		}
 	}
+	std::cout << std::endl;
 
 	return os;
 }
