@@ -59,5 +59,8 @@
     <ClInclude Include="src\MVector.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="IncludeList.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,8 +1,9 @@
-#include <iostream>
+#include "IncludeList.h"
+
 class MMatrix
 {
 	public:
-		MMatrix(int x, int y);
+		MMatrix(int numRows, int numCols);
 		~MMatrix();
 		void inputValue(int column, int row, float val);
 		friend std::ostream& operator<< (std::ostream& os, const MMatrix mat);
@@ -11,13 +12,13 @@ class MMatrix
 		MMatrix operator* (float operand);
 		friend MMatrix operator* (MMatrix operandF, MMatrix operand);
 		friend MMatrix operator* (float operandF, MMatrix operand);
-		int getsizeX() const;
-		int getsizeY() const;
+		int getNumRows() const;
+		int getNumCols() const;
 		float MMatrix::getValue(int x, int y) const;
 		
 
 
 	private:
 		float ** matrixData;
-		int sizeX, sizeY;
+		int numRows, numCols;
 };

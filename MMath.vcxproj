@@ -133,6 +133,7 @@
     <ClCompile Include="src\MVector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IncludeList.h" />
     <ClInclude Include="src\MCollision.h" />
     <ClInclude Include="src\MMath.h" />
     <ClInclude Include="src\MMatrix.h" />
